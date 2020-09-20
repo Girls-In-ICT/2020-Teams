@@ -1,0 +1,100 @@
+{% load static %}
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>school online</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Google-Style-Login.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Pretty-Registration-Form.css' %}">
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header"><a class="navbar-brand text-primary bg-info navbar-link" href="#">GIRL
+            EMPOWERMENT </a>
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-2"><span
+                    class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span
+                    class="icon-bar"></span></button>
+        </div>
+        <div class="collapse navbar-collapse" id="navcol-2">
+            <ul class="nav navbar-nav">
+                <li class="active" role="presentation"><a href="#">Home </a></li>
+                <li role="presentation"><a href="#">Library </a></li>
+                <li role="presentation"><a href="#">Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<p class="text-center text-danger">ARTICLES AND BOOKS</p>
+<div>
+    <p></p>
+</div>
+<div></div>
+    <div class="row">
+        {% for video in videosData %}
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    {#            <img src="..." alt="Card image cap">#}
+                    <video width='520' height='240' controls>
+                        <source src="{{ video.video.url }}">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <div class="card-body">
+                        <h5 class="card-title"> Book Title: <b>{{ video.title }}</b></h5>
+                        {#                        <p class="card-text">Open book below to read.</p>#}
+                        {#                        <a href="{{ library.bookfile.url }}">{{ library.bookfile.url }}</a><br>#}
+                    </div>
+                    <br>
+                <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                                            <textarea  class="form-control input-lg" placeholder="Write comment here" rows="2"
+                              cols="10" name="comment" required></textarea><br>
+                        <input type="hidden" name="userId" value="{{ request.user.id }}">
+                        <input type="hidden" name="videoId" value="{{ video.id }}">
+{#                    {% render_field  form.comment class="form-control input-lg" placeholder="Write comment here" rows="2" cols="10" required="True" %}#}
+{#                    {% render_field  form.userId type="hidden" class="form-control input-lg" placeholder="Write comment here" rows="2" cols="10" name="comment" %}#}
+{#                    {% render_field  form.bookId  class="form-control input-lg" placeholder="Write comment here" rows="2" cols="10" name="comment" sytle="display: none;" %}#}
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-offset-5 col-xs-offset-4">
+                            <button class="btn btn-info" type="submit">Comment</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <p></p>
+
+
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header"><a class="navbar-brand navbar-link" href="#">Brand</a>
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span
+                    class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span
+                    class="icon-bar"></span></button>
+        </div>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav">
+                <li class="active" role="presentation"><a href="#">First Item</a></li>
+                <li role="presentation"><a href="#">Second Item</a></li>
+                <li role="presentation"><a href="#">Third Item</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

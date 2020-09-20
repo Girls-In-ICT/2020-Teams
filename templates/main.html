@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>school online</title>
+<link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Google-Style-Login.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Pretty-Registration-Form.css' %}">
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header"><a class="navbar-brand text-primary bg-info navbar-link" href="#">GIRL EMPOWERMENT </a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-2">
+                <ul class="nav navbar-nav">
+                    <li class="active" role="presentation"><a href="#">Home </a></li>
+                    <li role="presentation"><a href="#">Library </a></li>
+                    <li role="presentation"><a href="{% url 'logout' %}">Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h1 class="text-uppercase text-center text-primary">girl empowerment</h1>
+    <h2 class="text-center">About Us.</h2>
+    <p class="text-justify">Girls are a powerful force for change in Africa, but they are considered as weak individuals hence, they are oppressed, humiliated and are not given equal opportunities in the society , education and employment.</p>
+    <div class="one"><img class="img-circle girl" src="{% static 'assets/img/gi.jpg' %}" width="320" height="290"></div>
+    <p class="text-justify">Heroes GIrls is a girl empowerment initiative that aims at solving several challenges faced by young girls by providing education, advices and sharing experiences to overcome early pregnancies and marriages. through articles, books and videos. </p>
+    <div
+    class="p1">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 book2">
+                <div><img src="{% static 'assets/img/openb1.jpg' %}" width="100%" class="book2"></div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 videos"><img src="{% static 'assets/img/video pic.PNG' %}" width="80%" height="300"></div>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-offset-5 col-md-12 col-sm-offset-4 col-xs-offset-2">
+                <a href="{% url 'library' %}" class="btn btn-info" type="button">Go to libray</a>
+                <a href="{% url 'video' %}" class="btn btn-success" type="button">Go to videos</a>
+            </div>
+        </div>
+        <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

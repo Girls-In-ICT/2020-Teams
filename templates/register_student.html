@@ -1,0 +1,48 @@
+
+{% load static %}
+ {% load widget_tweaks %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>school online</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Google-Style-Login.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Pretty-Registration-Form.css' %}">
+</head>
+
+<body>
+    <h1 class="text-center text-primary">GIRL EMPOWERMENT</h1>
+    <div class="login-card"><em> </em><em> </em><img src="{% static 'assets/img/so4.jpg' %}">
+        <p class="text-center bg-danger profile-name-card">You are welcome!!</p>
+        <form method="post" class="form-signin" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div><span class="reauth-email"> </span>
+                {% render_field form.username placeholder="username" class="form-control"%}
+                {% render_field form.first_name placeholder="enter your first name" class="form-control" required="True" %}
+
+                {% render_field form.last_name placeholder="enter your last name" class="form-control" required="True" %}
+                <label for="" style="text-decoration-color: whitesmoke">select your gender</label>
+                {% render_field form2.gender placeholder="enter your last name" class="form-control" required="True" %}<br>
+                {% render_field form2.date_of_birth placeholder="enter your date" class="form-control" required="True" type='date' %}<br>
+                {% render_field form.email placeholder="enter your email" class="form-control" required="True" %}
+                {% render_field form2.address placeholder="enter your address" class="form-control" cols="40" rows="10" style="margin: 0px; height: 46px; width: 270px;" required="True" %}
+                <br>
+                {% render_field form2.image class="form-control" %}<br>
+                {% render_field form.password1 placeholder="enter your password" required="True" class="form-control" %}
+                {% render_field form.password2 placeholder="confirm password" required="True" class="form-control" %}
+
+            </div>
+            <div class="checkbox">
+                <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Sign Up</button>
+            </div>
+        </form>
+       </div>
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

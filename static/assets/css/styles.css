@@ -1,0 +1,113 @@
+h2{
+  font-family:fantasy;
+}
+
+div.read{
+  display:flex;
+  justify-content:center;
+}
+
+div.col-lg-6.col-md-6.col-sm-6.col-xs-6.book2{
+  display:flex;
+  justify-content:center;
+  flex-grow:10;
+}
+
+div.col-lg-6.col-md-6.col-sm-6.col-xs-6.videos{
+  display:flex;
+  justify-content:center;
+}
+
+img.book2{
+  display:flex;
+  justify-content:center;
+}
+
+b{
+}
+
+h1.text-uppercase.text-center.text-primary{
+  font-family:fantasy;
+}
+
+p{
+  font-family:sans-serif;
+}
+
+h1.text-center.text-primary{
+  font-family:inherit;
+}
+
+.btn1{
+  display:flex;
+  justify-content:center;
+}
+
+button.btn.btn-primary.readmor{
+}
+
+button.btn.btn-primary.readmore{
+  display:flex;
+  justify-content:center;
+}
+
+.btn11{
+  display:flex;
+  justify-content:center;
+}
+
+button.btn.btn-primary{
+  display:flex;
+}
+
+button.btn.btn-primary{
+  justify-content:center;
+  display:flex;
+}
+
+div.more_videos{
+  align-content:center;
+}
+
+div.p1{
+  display:flex;
+  justify-content:center;
+}
+
+div.one{
+  display:flex;
+  justify-content:center;
+}
+
+img.img-circle.book2{
+  height:300px;
+}
+
+img.book2{
+  height:300px;
+  width:90%;
+}
+
+img{
+}
+
+h1.text-center.text-primary{
+  font-family:fantasy;
+}
+
+body{
+  margin:15px;
+}
+
+textarea.form-control.input-lg{
+}
+
+a.navbar-brand.navbar-link{
+  font-family:fantasy;
+}
+
+a.navbar-brand.text-primary.navbar-link{
+  font-size:x-large;
+  color:#337ab7;
+}
+
